@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="ch">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>嘉兴学院招聘</title>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/myinfo.js" defer></script>
+        <script src="js/school.js" defer></script>
+        <script src="js/work.js" defer></script>
+        <script src="js/family.js" defer></script>
+        <script src="js/skill.js" defer></script>
+        <script src="js/resume.js" defer></script>
+
+<script>
+            $(function() {
+                $(".meun-item").click(function() {
+                    $(".meun-item").removeClass("meun-item-active");
+                    $(this).addClass("meun-item-active");
+                    var itmeObj = $(".meun-item").find("img");
+                    itmeObj.each(function() {
+                        var items = $(this).attr("src");
+                        items = items.replace("_grey.png", ".png");
+                        items = items.replace(".png", "_grey.png")
+                        $(this).attr("src", items);
+                    });
+                    var attrObj = $(this).find("img").attr("src");
+                    ;
+                    attrObj = attrObj.replace("_grey.png", ".png");
+                    $(this).find("img").attr("src", attrObj);
+                });
+            })
+</script>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/common.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css" />
+        <link rel="shortcut icon" href="images/favicon.ico" />
+    </head>
+
+    <body>
+
+        <div id="wrap">
+
+            <!-- 左侧菜单栏目块 -->
+            <div class="leftMeun" id="leftMeun">
+                <div class="meun-title">我的简历</div>
+                <div class="meun-item meun-item-active" href="#MyInfo" aria-controls="MyInfo" role="tab" data-toggle="tab"><img src="images/icon_source.png">个人信息</div>
+                <div class="meun-item" href="#SchoolResume" aria-controls="SchoolResume" role="tab" data-toggle="tab"><img src="images/icon_chara_grey.png">学习经历</div>
+                <div class="meun-item" href="#WorkResume" aria-controls="WorkResume" role="tab" data-toggle="tab"><img src="images/icon_change_grey.png">工作经历</div>
+                <div class="meun-item" href="#MyFamily" aria-controls="MyFamily" role="tab" data-toggle="tab"><img src="images/icon_char_grey.png">社会关系</div>
+                <div class="meun-item" href="#MySkill" aria-controls="MySkill" role="tab" data-toggle="tab"><img src="images/icon_user_grey.png">技能和荣誉</div>
+                <div class="meun-item" href="#checkResume" aria-controls="checkResume" role="tab" data-toggle="tab"><img src="images/icon_card_grey.png">查看简历</div>
+            </div>
+
+            <!-- 右侧具体内容栏目 -->
+            <div id="rightContent">
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                     <!-- 个人信息模块 -->
+                    <div role="tabpanel" class="tab-pane active" id="MyInfo">
+                        <div class="data-div">
+                          <div class="check-div form-inline">
+                            <button class="btn btn-yellow"  id="saveInfo"><span class="glyphicon glyphicon-saved" aria-hidden="true"></span>保 存</button>
+                                <button class="btn btn-yellow"  id="InfoNext" role="button"><span class="glyphicon glyphicon-forward" aria-hidden="true"></span>下一步</button>
+                          </div>
+                            <div class="tablebody">
+                                <div class="row">
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+                                          <input type="text" class="form-control" id="XM" style="color: black;padding-left: 10px">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
+                                          <select class="form-control" id="XB">
+                                            <option>男</option>
+                                            <option>女</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon" >民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族</span>
+                                          <input type="text" class="form-control" id="MZ" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="row">
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">身份证号</span>
+                                          <input type="text" class="form-control" id="SFZH" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">籍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;贯</span>
+                                          <input type="text" class="form-control" id="JG" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon" >户籍所在地</span>
+                                          <input type="text" class="form-control" id="HJSZD" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="row">
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">毕业院校</span>
+                                          <input type="text" class="form-control" id="BYYX" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">最高学历</span>
+                                          <select class="form-control" id="ZGXL">
+                                            <option>博士</option>
+                                            <option>硕士</option>
+                                            <option>本科</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon" >最高学位</span>
+                                          <select class="form-control" id="ZGXW">
+                                            <option>研究生</option>
+                                            <option>学士</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="row">
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span>
+                                          <select class="form-control" id="LX">
+                                            <option>应届生</option>
+                                            <option>往届生</option>
+                                            <option>国(境)外</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">政治面貌</span>
+                                          <select class="form-control" id="ZZMM">
+                                            <option>中共党员</option>
+                                            <option>共青团员</option>
+                                            <option>群众</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon" >婚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;否</span>
+                                          <select class="form-control" id="HF">
+                                            <option>是</option>
+                                            <option>否</option>
+                                          </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">所学专业</span>
+                                          <input type="text" class="form-control" id="SXZY" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">专业职务</span>
+                                          <input type="text" class="form-control" id="ZYZW" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon" >资格证书</span>
+                                          <input type="text" class="form-control" id="ZGZS" style="color: black;padding-left: 10px" placeholder="无">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">目前工作单位</span>
+                                          <input type="text" class="form-control" id="GZDW" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务</span>
+                                          <input type="text" class="form-control" id="ZW" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon" >联系手机</span>
+                                          <input type="text" class="form-control" id="LXSJ" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                </div> 
+
+                                <div class="row">
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">出生年月</span>
+                                          <input type="date" class="form-control" id="CSNY" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon">毕业时间</span>
+                                          <input type="date" class="form-control" id="BYSJ" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-4" style="padding-top: 15px">
+                                        <div class="input-group">
+                                          <span class="input-group-addon" >E-Mail</span>
+                                          <input type="email" class="form-control" id="YX" style="color: black;padding-left: 10px" >
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--学习经历-->
+                   <div role="tabpanel" class="tab-pane" id="SchoolResume">
+                        <div class="data-div">
+                            <div class="check-div form-inline">
+                                <button class="btn btn-yellow" data-toggle="modal" data-target="#AddSchool">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新 增
+                                </button>
+                                <button class="btn btn-yellow" data-toggle="modal" id="SchoolResumeNext">
+                                    <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>下一步
+                                </button>
+                            </div>
+                            <div class="row tableHeader">
+                                <div class="col-xs-2">
+                                    起始日期
+                                </div>
+                                <div class="col-xs-2">
+                                    结束日期
+                                </div>
+                                <div class="col-xs-2">
+                                    学习院校
+                                </div>
+                                <div class="col-xs-2">
+                                    所学专业
+                                </div>
+                                <div class="col-xs-2">
+                                    学历
+                                </div>
+                                <div class="col-xs-2">
+                                    操作
+                                </div>
+                            </div>
+                            <div class="tablebody" id="SchoolBody">      
+                            </div>
+
+                        <!--添加学习经历-->
+                        <div class="modal fade" id="AddSchool" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">新增学习经历</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <form class="form-horizontal">
+                                                <div class="form-group ">
+                                                    <label class="col-xs-3 control-label">起始日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="school_QSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">结束日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="school_JSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">学习院校：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="school_XXYX">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">所学专业：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="school_ZY">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">学历：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="school_XL">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-green" id="saveSchool">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--修改学习经历-->
+                        <div class="modal fade" id="changeSchool" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">修改学习经历</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <form class="form-horizontal">
+                                                <div class="form-group ">
+                                                    <label class="col-xs-3 control-label">起始日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="school_change_QSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">结束日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="school_change_JSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">学习院校：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="school_change_XXYX">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">所学专业：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="school_change_ZY">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">学历：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="school_change_XL">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="sOrd" class="col-xs-3 control-label">ID：</label>
+                                                    <div class="col-xs-6">
+                                                        <input type="" class="form-control input-sm duiqi content" id="school_change_ID" placeholder="">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-green" id="updateSchoolBtn">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--弹出删除学习窗口-->
+                        <div class="modal fade" id="deleteSchool" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="form-group">
+                                            <label for="sOrd" class="col-xs-3 control-label">ID：</label>
+                                            <div class="col-xs-6">
+                                            <input type="" class="form-control input-sm duiqi content" id="delete_school_ID">
+                                            </div>
+                                    </div>
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            确定要删除该信息？删除后不可恢复！
+                                        </div>  
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-danger" id="deleleSchool">确 定</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                         </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="WorkResume">
+                        <div class="data-div">
+                            <div class="check-div form-inline">
+                                <button class="btn btn-yellow" data-toggle="modal" data-target="#AddWorkResume">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新 增
+                                </button>
+                                <button class="btn btn-yellow" data-toggle="modal" id="MyResumeNext">
+                                    <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>下一步
+                                </button>
+                            </div>
+                            <div class="row tableHeader">
+                                <div class="col-xs-2 ">
+                                    起始日期
+                                </div>
+                                <div class="col-xs-2 ">
+                                    结束日期
+                                </div>
+                                <div class="col-xs-2">
+                                    工作单位
+                                </div>
+                                <div class="col-xs-2">
+                                    岗位
+                                </div>
+                                <div class="col-xs-2">
+                                    职称
+                                </div>
+                                <div class="col-xs-2">
+                                    操作
+                                </div>
+                            </div>
+                            <div class="tablebody" id="WorkBody">
+                                
+                            </div>
+
+                        <!--添加工作经历-->
+                        <div class="modal fade" id="AddWorkResume" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">新增工作经历</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <form class="form-horizontal">
+                                                <div class="form-group ">
+                                                    <label class="col-xs-3 control-label">起始日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="work_QSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">结束日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="work_JSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">工作单位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="work_GZDW">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">岗位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="work_GW">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">职称：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="work_ZC">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-green" id="saveWork">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--修改工作经历-->
+                        <div class="modal fade" id="changeWork" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">修改工作经历</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <form class="form-horizontal">
+                                                <div class="form-group ">
+                                                    <label class="col-xs-3 control-label">起始日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="work_change_QSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">结束日期：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="date" class="form-control input-sm duiqi" id="work_change_JSRQ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">工作单位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="work_change_GZDW">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">岗位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="work_change_GW">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">职称：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="work_change_ZC">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="sOrd" class="col-xs-3 control-label">ID：</label>
+                                                    <div class="col-xs-6">
+                                                        <input type="" class="form-control input-sm duiqi content" id="work_change_ID" placeholder="">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-green" id="updateWorkBtn">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--弹出删除工作窗口-->
+                        <div class="modal fade" id="deleteWork" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="form-group">
+                                            <label for="sOrd" class="col-xs-3 control-label">ID：</label>
+                                            <div class="col-xs-6">
+                                            <input type="" class="form-control input-sm duiqi content" id="delete_work_ID">
+                                            </div>
+                                    </div>
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            确定要删除该信息？删除后不可恢复！
+                                        </div>  
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-danger" id="deleteWorkBtn">确 定</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
+                         </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="MyFamily">
+                        <div class="data-div">
+                            <div class="check-div form-inline">
+                                <button class="btn btn-yellow" data-toggle="modal" data-target="#AddFamily">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新 增
+                                </button>
+                                <button class="btn btn-yellow" data-toggle="modal" id="MyFamilyNext">
+                                    <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>下一步
+                                </button>
+                            </div>
+                            <div class="row tableHeader">
+                                <div class="col-xs-2">
+                                    姓名
+                                </div>
+                                <div class="col-xs-2">
+                                    年龄
+                                </div>
+                                <div class="col-xs-2">
+                                    工作单位
+                                </div>
+                                <div class="col-xs-2">
+                                    关系
+                                </div>
+                                <div class="col-xs-2">
+                                    职位
+                                </div>
+                                <div class="col-xs-2">
+                                    操作
+                                </div>
+                            </div>
+                            <div class="tablebody" id="FamilyBody">
+                                
+                            </div>
+
+                        <!--添加家庭成员-->
+                        <div class="modal fade" id="AddFamily" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">新增家庭成员</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <form class="form-horizontal">
+                                                <div class="form-group ">
+                                                    <label class="col-xs-3 control-label">姓名：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_XM">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">年龄：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="data" class="form-control input-sm duiqi" id="family_NL">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">工作单位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_GZDW">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">关系：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_GX">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">职位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_ZW">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-green" id="saveFamily">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       <!--修改家庭成员关系-->
+                        <div class="modal fade" id="changeFamily" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">修改社会关系</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <form class="form-horizontal">
+                                                <div class="form-group ">
+                                                    <label class="col-xs-3 control-label">姓名：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_change_XM">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">年龄：</label>
+                                                    <div class="col-xs-8 ">
+                                                        <input type="data" class="form-control input-sm duiqi" id="family_change_NL">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">工作单位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_change_GZDW">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">关系：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_change_GX">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-xs-3 control-label">职位：</label>
+                                                    <div class="col-xs-8">
+                                                        <input type="text" class="form-control input-sm duiqi" id="family_change_ZW">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="sOrd" class="col-xs-3 control-label">ID：</label>
+                                                    <div class="col-xs-6">
+                                                        <input type="" class="form-control input-sm duiqi content" id="family_change_ID" placeholder="">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-green" id="updateFamilyBtn">保 存</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--弹出删除家庭关系窗口-->
+                        <div class="modal fade" id="deleteFamily" role="dialog" aria-labelledby="gridSystemModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="form-group">
+                                            <label for="sOrd" class="col-xs-3 control-label">ID：</label>
+                                            <div class="col-xs-6">
+                                            <input type="" class="form-control input-sm duiqi content" id="delete_family_ID">
+                                            </div>
+                                    </div>
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            确定要删除该信息？删除后不可恢复！
+                                        </div>  
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取 消</button>
+                                        <button type="button" class="btn btn-xs btn-danger" id="deleteFamilyBtn">确 定</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+
+                         </div>
+                    </div>
+
+                    <!--技能和荣誉-->
+                    <div role="tabpanel" class="tab-pane" id="MySkill">
+                            <div class="check-div form-inline">
+                                <button class="btn btn-yellow" data-toggle="modal" id="saveSkill">
+                                    <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>保 存
+                                </button>
+                            </div>
+                            <div class="tablebody">
+                                <h5>技能特长</h5>
+                                <textarea class="form-control" rows="5" placeholder="技能特长..." id="skill_JN"></textarea>
+
+                                <h5>荣誉获奖</h5>
+                                <textarea class="form-control" rows="5" placeholder="荣誉获奖..." id="skill_RY"></textarea>
+                                本人承诺：以上所填信息全部属实，如发现弄虚作假行为，本人愿意承担全部相应责任。
+                                
+                            </div>
+                      </div>
+
+                   <!--查看全部信息-->
+                    <div role="tabpanel" class="tab-pane" id="checkResume">
+                            <table class="table table-bordered table-condensed table-striped" id="showInfo">
+                              <tr>
+                                <td>姓名</td>
+                                <td></td>
+                                <td>性别</td>
+                                <td></td>
+                                <td>民族</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td>身份证</td>
+                                <td></td>
+                                <td>籍贯</td>
+                                <td></td>
+                                <td>户籍</td>
+                                <td></td>                                
+                            </tr>
+
+                            <tr>
+                              <td>毕业院校</td>
+                                <td></td>
+                                <td>最高学历</td>
+                                <td></td>
+                                <td>最高学位</td>
+                                <td></td>                               
+                            </tr>
+
+                            <tr>
+                                <td>类型</td>
+                                <td></td>
+                                <td>政治面貌</td>
+                                <td></td>
+                                <td>婚否</td>
+                                <td></td>
+                                
+                            </tr>
+
+
+                            <tr>
+                                <td>所学专业</td>
+                                <td></td>
+                                <td>专业职务</td>
+                                <td></td>
+                                <td>资格证书</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td>工作单位</td>
+                                <td></td>
+                                <td>职务</td>
+                                <td></td>
+                                <td>联系手机</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td>出生年月</td>
+                                <td></td>
+                                <td>毕业时间</td>
+                                <td></td>
+                                <td>邮箱</td>
+                                <td></td>
+                            </tr>
+
+                            </table>
+
+                            <table class="table table-condensed table-striped" id="showSchool">
+                              <thead>
+                                <tr class="active">
+                                  <td>起始日期</td>
+                                  <td>结束日期</td>
+                                  <td>学习院校</td>
+                                  <td>所学专业</td>
+                                  <td>学历</td>
+                                </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+
+                          <table class="table table-condensed table-striped" id="showWork">
+                              <thead>
+                                <tr class="active">
+                                  <td>起始日期</td>
+                                  <td>结束日期</td>
+                                  <td>工作单位</td>
+                                  <td>岗位</td>
+                                  <td>职称</td>
+                                </tr>
+                              </thead>
+                              <tbody></tbody>
+                            </table>
+
+                          <table class="table table-condensed table-striped" id="showFamily">
+                              <thead>
+                                <tr class="active">
+                                  <td>姓名</td>
+                                  <td>年龄</td>
+                                  <td>工作单位</td>
+                                  <td>关系</td>
+                                  <td>职位</td>
+                                </tr>
+                              </thead>
+                              <tbody></tbody>
+                          </table>
+
+                          <textarea class="form-control" rows="3"  id="showJN" readonly="readonly"></textarea>
+                          <textarea class="form-control" rows="3"  id="showRY" readonly="readonly"></textarea>
+                      </div>
+
+                  </div>
+            </div>
+        </div>
+
+</body>
+
+</html>

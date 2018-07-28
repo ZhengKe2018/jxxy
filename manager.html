@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ch">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>嘉兴学院招聘</title>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/manager.js"></script>
+
+<script>
+            $(function() {
+                $(".meun-item").click(function() {
+                    $(".meun-item").removeClass("meun-item-active");
+                    $(this).addClass("meun-item-active");
+                    var itmeObj = $(".meun-item").find("img");
+                    itmeObj.each(function() {
+                        var items = $(this).attr("src");
+                        items = items.replace("_grey.png", ".png");
+                        items = items.replace(".png", "_grey.png")
+                        $(this).attr("src", items);
+                    });
+                    var attrObj = $(this).find("img").attr("src");
+                    ;
+                    attrObj = attrObj.replace("_grey.png", ".png");
+                    $(this).find("img").attr("src", attrObj);
+                });
+            })
+</script>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/common.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/flat-ui.min.css" />
+        <link rel="shortcut icon" href="images/favicon.ico" />
+    </head>
+
+    <body>
+
+        <div id="wrap">
+
+             <!-- 左侧菜单栏目块 -->
+            <div class="leftMeun" id="leftMeun">
+                <div class="meun-title">简历管理</div>
+                <div class="meun-item meun-item-active" href="#checkResume" aria-controls="checkResume" role="tab" data-toggle="tab"><img src="images/icon_source.png">简历查看</div>
+            </div>
+
+            <!-- 右侧具体内容栏目 -->
+            <div id="rightContent">
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane active" id="checkResume">
+                            <div class="check-div form-inline">
+                                <label>应聘部门:&nbsp;</label>
+                                    <select class=" form-control">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                    </select>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <label>应聘岗位:&nbsp;</label>
+                                    <select class=" form-control">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                    </select>
+                                <button class="btn btn-yellow btn-xs" id="Manager_Check_Resume">
+                                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>查 看
+                                </button>
+                                <button class="btn btn-yellow btn-xs" id="Manager_Output_Excel">
+                                    <span class="glyphicon glyphicon-export" aria-hidden="true"></span>导出Excel
+                                </button>
+                            </div>
+                            <div class="data-div">
+                                <div class="row tableHeader">
+                                    <div class="col-xs-1">
+                                        姓 名
+                                    </div>
+                                    <div class="col-xs-1">
+                                        性 别
+                                    </div>
+                                    <div class="col-xs-2">
+                                        年 龄
+                                    </div>
+                                    <div class="col-xs-1">
+                                        民 族
+                                    </div>
+                                    <div class="col-xs-2">
+                                        身份证
+                                    </div>
+                                    <div class="col-xs-2">
+                                        毕业院校
+                                    </div>
+                                    <div class="col-xs-1">
+                                        最高学历
+                                    </div>
+                                    <div class="col-xs-1">
+                                        最高学位
+                                    </div>
+                                    <div class="col-xs-1">
+                                        联系手机
+                                    </div>
+                                </div>
+                                <div class="tablebody" id="Manager_Show_Resume">
+                                    
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
